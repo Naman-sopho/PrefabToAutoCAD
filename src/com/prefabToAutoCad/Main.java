@@ -2,10 +2,7 @@ package com.prefabToAutoCad;
 
 import com.google.gson.Gson;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 public class Main {
@@ -27,5 +24,16 @@ public class Main {
         List<BlocksToFill> regions = spawnBlockRegions.regionsToFill;
 
         PrefabToAutoCad prefabToAutoCad = new PrefabToAutoCad(regions);
+
+        // output to dxf file
+        File outputDxf = new File("output.dxf");
+        FileWriter writer = new FileWriter(outputDxf);
+
+        for (String output : prefabToAutoCad.createAutoCadPointsList()) {
+            writer.write(output);
+        }
+
+        reader.close();
+        writer.close();
     }
 }

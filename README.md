@@ -1,5 +1,5 @@
 ## PrefabToAutoCAD
-Transforms the JSON representation in a StructureTemplate prefab into a .dxf file that can be imported into AutoCAD.
+Transforms the JSON representation in a [StructureTemplate](https://github.com/Terasology/StructureTemplates) prefab into a .dxf file that can be imported into AutoCAD.
 
 #### Usage
 This currently works only if the prefab consists of just the `regionsToFill` list, everything else has to be deleted from the 
